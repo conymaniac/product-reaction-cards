@@ -1,0 +1,52 @@
+/**
+ * Welcome
+ */
+
+.welcome {
+	max-width: unit(1248 / 16, rem);
+	display: block;
+	margin: 0 auto;
+	padding-top: 17vh;
+	text-align: center;
+
+	&__pretext,
+	&__title,
+	&__subtitle {
+		display: block;
+		text-align: center;
+		color: @--body;
+	}
+
+	&__pretext {
+		&:extend(.txt--headline);
+	}
+
+	&__title,
+	&__link {
+		&:extend(.txt--headline);
+		color: @--important;
+	}
+
+	&__subtitle {
+		&:extend(.txt--subheadline);
+		margin-bottom: unit(32 / 16, rem);
+	}
+
+	&__link {
+		text-decoration: none;
+	}
+
+	&__divider {
+		width: 100%;
+		margin: unit(48 / 16, rem) 0;
+		border-style: solid;
+		border-width: 1px;
+		border-image-source: radial-gradient(circle at 50% 50%, @--important, #8c8b8b, #fcfcfc);
+		border-image-slice: 1;
+	}
+
+	&__button {
+		margin: 0 auto;
+	}
+
+}
