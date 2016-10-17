@@ -1,0 +1,41 @@
+/**
+ * Card
+ */
+
+.card {
+	position: relative;
+	width: unit(240 / 16, em);
+	height: unit(337.5 / 16, em);
+	margin: 0 auto;
+
+	background-color: #ffffff;
+	box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.5);
+	border: none;
+
+	&__title,
+	&__actions {
+		position: absolute;
+		left: 0;
+		right: 0;
+	}
+
+	&__title {
+		&:extend(.txt--subheadline);
+
+		top: unit(80 / 337.5 * 100, %);
+		text-align: center;
+		color: @--body;
+	}
+
+	&__actions {
+		display: block;
+		bottom: unit(72 / 337.5 * 100, %);
+	}
+
+	.card__button,
+	.card__link {
+		display: block;
+		margin: 0 auto;
+		// width: 100%;
+	}
+}

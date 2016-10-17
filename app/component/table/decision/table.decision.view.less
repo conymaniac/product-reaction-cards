@@ -1,0 +1,42 @@
+/**
+ * Decision Table
+ */
+
+.table--decision { 
+	&.table {
+		padding-top: 4vh;	
+
+		@media screen and (min-width: @--xm-min) {	
+			padding-top: 7vh;	
+		}
+	}
+
+	.table {
+		&__stock {
+			&:extend(.col-xs-12);
+
+			@media screen and (min-width: @--xm-min) {
+				-ms-flex-preferred-size: 20%;
+			    flex-basis: 20%;
+			    max-width: 20%;				
+			}
+			
+			margin-bottom: unit(48 / 16, rem);
+
+			&--help {
+				&:extend(.col-xs-12);
+			}
+		}
+
+		&__box {
+			&--help {
+				margin: 0 auto unit(48 / 16, rem);
+				text-align: center;
+			}
+		}
+
+		&__button {
+			margin: unit(24 / 16, rem) auto 0;
+		}
+	}
+}

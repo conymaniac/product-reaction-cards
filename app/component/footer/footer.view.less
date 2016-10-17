@@ -4,4 +4,12 @@
 
 .footer {
 	&:extend(.page__footer);
+
+	&__text {
+		&:extend(.txt--note);
+
+		padding: unit(16 / 16, rem);
+		text-align: center;
+		color: @--body;
+	}
 } 

@@ -1,0 +1,19 @@
+/**
+ * Small Card
+ */
+
+.card--small {
+	
+	&.card {
+		width: unit(160 / 16, em);
+		height: unit(136 / 16, em);
+	}
+
+	.card {
+		&__title {
+			&:extend(.txt--body);
+
+			top: unit(54 / 136 * 100, %);
+		}
+	}
+}

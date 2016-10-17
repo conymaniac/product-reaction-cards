@@ -1,21 +1,21 @@
 import ns from 'ima/namespace';
 import BaseController from 'app/base/Controller';
 
-ns.namespace('app.page.home');
+ns.namespace('app.page.decision');
 
 /**
- * Controller for the home page
+ * Controller for the decision page
  *
  * @class Controller
  * @extends app.base.BaseController
- * @namespace app.page.home
+ * @namespace app.page.decision
  * @module app
  * @submodule app.page
  */
 class Controller extends BaseController {
 
 	/**
-	 * Initializes the home page controller.
+	 * Initializes the decision page controller.
 	 *
 	 * @method constructor
 	 * @constructor
@@ -32,6 +32,21 @@ class Controller extends BaseController {
 		 * @type {app.model.reaction.Service}
 		 */
 		this._reactionService = reactionService;
+	}
+
+	/**
+	 * Set meta params.
+	 *
+	 * @method setSeoParams
+	 * @param {Object} resolvedPromises
+	 * @param {ima.meta.MetaManager} metaManager
+	 * @param {ima.router.Router} router
+	 * @param {ima.dictionary.Dictionary} dictionary
+	 * @param {Object} setting
+	 */
+	setMetaParams(resolvedPromises, metaManager, router, dictionary, setting) {
+		var title = dictionary.get('decision.seoTitle');
+		var description = dictionary.get('decision.seoDescription');
 	}
 
 	/**
@@ -62,4 +77,4 @@ class Controller extends BaseController {
 	}
 }
 
-ns.app.page.home.Controller = Controller;
+ns.app.page.decision.Controller = Controller;

@@ -6,7 +6,7 @@
 	max-width: unit(1248 / 16, rem);
 	display: block;
 	margin: 0 auto;
-	padding-top: 17vh;
+	padding-top: 16vh;
 	text-align: center;
 
 	&__pretext,
@@ -22,9 +22,13 @@
 	}
 
 	&__title,
-	&__link {
+	.welcome__link__title {
 		&:extend(.txt--headline);
-		color: @--important;
+		color: @--important--lvl-2;
+	}
+
+	.welcome__link__title {
+		color: inherit;
 	}
 
 	&__subtitle {
@@ -33,7 +37,7 @@
 	}
 
 	&__link {
-		text-decoration: none;
+		display: inline-block;
 	}
 
 	&__divider {
@@ -41,7 +45,7 @@
 		margin: unit(48 / 16, rem) 0;
 		border-style: solid;
 		border-width: 1px;
-		border-image-source: radial-gradient(circle at 50% 50%, @--important, #8c8b8b, #fcfcfc);
+		border-image-source: radial-gradient(circle at 50% 50%, @--important--lvl-1, #8c8b8b, #fcfcfc);
 		border-image-slice: 1;
 	}
 

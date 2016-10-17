@@ -1,0 +1,48 @@
+/**
+ * Deal Table
+ */
+
+.table--deal {
+	&.table {
+		padding-top: 4vh;	
+
+		@media screen and (min-width: @--xm-min) {	
+			padding-top: 16vh;	
+		}
+	}
+
+	.table {
+
+		&__stock {
+			&:extend(.col-md-4);
+		}
+
+		&__box {
+			&--help {
+				margin: unit(32 / 16, 	em) auto;
+
+				@media screen and (min-width: @--xm-min) {	
+					margin-top: unit(128 / 16, 	em);
+					margin-bottom: 0
+				}
+			}
+		}
+		
+		&__break {
+			display: none;
+
+			@media screen and (min-width: @--xs-min) {
+				display: initial;
+			}
+
+			@media screen and (min-width: @--xm-min) {
+				display: none;
+			}
+
+			@media screen and (min-width: @--lg-min) {
+				display: initial;
+			}
+		}
+
+	}
+}

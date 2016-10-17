@@ -5,9 +5,11 @@ var js = [
 ];
 
 var less = [
+	'./node_modules/flexboxgrid/css/flexboxgrid.min.css',
 	'./app/assets/less/app.less',
 	'./app/assets/less/colors.less',
 	'./app/assets/less/base.less',
+	'./app/assets/less/font.less',
 	'./app/assets/less/text.less',
 	'./app/assets/less/page.less',
 	'./app/component/**/*.less',

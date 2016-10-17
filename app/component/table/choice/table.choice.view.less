@@ -1,0 +1,21 @@
+/**
+ * Choice Table
+ */
+
+.table--choice { 
+	&.table {
+		padding-top: 0;	
+	}
+
+	.table {
+		&__stock {
+			&:extend(.col-xs-12);
+
+			@media screen and (min-width: @--xm-min) {
+				-ms-flex-preferred-size: 20%;
+			    flex-basis: 20%;
+			    max-width: 20%;				
+			}
+		}
+	}
+}

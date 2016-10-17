@@ -7,22 +7,31 @@ ns.namespace('app.component.button');
 export default class View extends AbstractComponent {
 	render() {
 		return (
-			<button type="button" className={ "button " + this.props.className }>
+			<button 
+				type="button" 
+				className={ this.props.classPrefix + 'button' } 
+				onClick={ this.props.onClick }
+				disabled={ !!this.props.disabled }>
 				{ this._renderContent() }
 			</button>
 		);
 	}
 
 	_renderContent() {
-		if (!!this.props.link) {
+		if (!!this.props.routeName) {
+			let Link = ns.app.component.link.View;
+
 			return (
-				<a href={this.props.link} className="button__link" title={ this.props.title }>
-					<span className="button__title">{ this.props.title }</span>
-				</a>
+				<Link 
+					classPrefix={ this.props.classPrefix + 'button__'}
+					title={ this.props.title }
+					seoTitle={ !!this.props.seoTitle ? this.props.seoTitle : this.props.title }
+					routeName={ this.props.routeName }
+					$Utils={ this.utils } />
 			);
 		} else {
 			return (
-				<span className="button__title">{ this.props.title }</span>
+				<span className={ this.props.classPrefix + 'button__title' }>{ this.props.title }</span>
 			);
 		}
 	}

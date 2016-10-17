@@ -10,8 +10,11 @@ export let init = (ns, oc, config) => {
 	oc.bind('ReactionResource', ns.app.model.reaction.Resource, ['$Http', 'API_FAKE_URL', 'ReactionFactory', '$Cache']);
 	oc.bind('ReactionService', ns.app.model.reaction.Service, ['ReactionResource']);
 
-	// Page Home
-	oc.inject(ns.app.page.home.Controller, ['ReactionService']);
+	// Pages
+	oc.inject(ns.app.page.welcome.Controller);
+	oc.inject(ns.app.page.deal.Controller, ['ReactionService']);
+	oc.inject(ns.app.page.decision.Controller, ['ReactionService']);
+	oc.inject(ns.app.page.thanku.Controller, ['ReactionService']);
 
 	oc.inject(ns.app.page.error.Controller, []);
 	oc.inject(ns.app.page.notFound.Controller, []);

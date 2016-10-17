@@ -4,4 +4,52 @@
 
 .header {
 	&:extend(.page__header);
+
+	&__nav {
+		&:extend(.row);
+
+		width: 100%;
+	}
+
+	.home__link,
+	.back__link {
+		&:extend(.col-sm-6);
+	}
+
+	.home__link {
+		&:extend(.col-xs-9);
+
+		text-align: right;
+		// padding-right: unit(16 / 16, rem);
+	}
+
+	.back__link {
+		&:extend(.col-xs-3);
+
+		position: relative;
+		text-align: left;
+		padding-left: unit(48 / 16, rem);
+
+		&__title {
+			margin-left: unit(4 / 16, rem);
+
+			display: none;
+
+			@media screen and (min-width: @--xs-min) {
+				display: initial;
+			}
+		}
+
+		&__icon {
+			&:extend(.icon__arrow--left);
+
+			position: absolute;
+			top: unit(13 / 16, rem);
+			left: unit(32 / 16, rem);
+
+			&:before {
+				&:extend(.icon__arrow--left:before);
+			}
+		}
+	}
 } 

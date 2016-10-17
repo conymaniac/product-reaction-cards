@@ -9,4 +9,5 @@ doc/
 build/
 .tmp/es5transformedApp.js
 app/assets/bower
-product-reaction-cards.sublime-project
+prc.sublime-project
+prc.sublime-workspace

@@ -1,0 +1,50 @@
+/**
+ * Medium Card
+ */
+
+.card--medium {
+	
+	&.card {
+		width: unit(160 / 16, em);
+		height: unit(225 / 16, em);
+	}
+
+	&.card--medium {
+		.card__number {
+			&:extend(.txt--subheadline);
+
+			bottom: unit(60 / 225 * 100, %);
+		}
+	}
+
+	.card {
+		&__title {
+			&:extend(.txt--body);
+
+			top: unit(60 / 225 * 100, %);
+		}
+
+		&__actions {
+			bottom: unit(60 / 225 * 100, %);
+		}
+
+		&__button,
+		&__link {
+			width: unit(85 / 16, rem);
+			height: unit(28 / 16, rem);
+		}
+
+		&__button__title,
+		&__button__link__title {
+			&:extend(.txt--note);
+
+			line-height: unit(28 / 16, rem);
+		}
+
+		&__link__title {
+			&:extend(.txt--note);
+
+			line-height: unit(28 / 16, rem);
+		}
+	}
+}

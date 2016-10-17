@@ -2,7 +2,7 @@ import ns from 'ima/namespace';
 import AbstractComponent from 'ima/page/AbstractComponent';
 import React from 'react';
 
-ns.namespace('app.page.home');
+ns.namespace('app.page.welcome');
 
 export default class View extends AbstractComponent {
 	render() {
@@ -12,10 +12,11 @@ export default class View extends AbstractComponent {
 		let Welcome = ns.app.component.welcome.View;
 
 		return (
-			<div className='page page--home'>
+			<div className='page page--welcome'>
 				<Header />
 				<Content>
-					<Welcome />
+					<Welcome
+						$Utils={ this.utils } />
 				</Content>
 				<Footer />
 			</div>
@@ -23,4 +24,4 @@ export default class View extends AbstractComponent {
 	}
 }
 
-ns.app.page.home.View = View;
+ns.app.page.welcome.View = View;
