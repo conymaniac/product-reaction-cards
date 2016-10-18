@@ -12,7 +12,8 @@ export default class View extends AbstractComponent {
 				<a 
 					href={ linkToDeal } 
 					className={ this.props.classPrefix + 'link' } 
-					title={ !!this.props.seoTitle ? this.props.seoTitle : this.props.title }>
+					title={ !!this.props.seoTitle ? this.props.seoTitle : this.props.title }
+					onClick={ this.props.onClick }>
 					{ this._renderIcon() }
 					<span className={ this.props.classPrefix + 'link__title' }>{ this.props.title }</span>
 				</a>
@@ -22,7 +23,8 @@ export default class View extends AbstractComponent {
 				<button
 					type="button"
 					className={ this.props.classPrefix + 'link' } 
-					title={ !!this.props.seoTitle ? this.props.seoTitle : this.props.title }>
+					title={ !!this.props.seoTitle ? this.props.seoTitle : this.props.title }
+					onClick={ this.props.onClick }>
 					{ this._renderIcon() }
 					<span className={ this.props.classPrefix + 'link__title' }>{ this.props.title }</span>
 				</button>

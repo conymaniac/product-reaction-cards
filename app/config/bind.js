@@ -12,7 +12,7 @@ export let init = (ns, oc, config) => {
 
 	// Pages
 	oc.inject(ns.app.page.welcome.Controller, ['ReactionService', '$CookieStorage']);
-	oc.inject(ns.app.page.deal.Controller, ['ReactionService', '$CookieStorage']);
+	oc.inject(ns.app.page.deal.Controller, ['ReactionService', '$CookieStorage', '$Router']);
 	oc.inject(ns.app.page.decision.Controller, ['ReactionService', '$CookieStorage']);
 	oc.inject(ns.app.page.thanku.Controller, ['ReactionService', '$CookieStorage']);
 

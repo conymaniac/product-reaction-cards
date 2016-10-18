@@ -33,6 +33,12 @@ export default class View extends AbstractComponent {
 		);
 	}
 
+	/**
+	 * Send results
+	 *
+	 * @method _sendResults
+	 * @params {object} e
+	 **/
 	_sendResults(e) {
 		// <Button 
 		// 	classPrefix="thanku__"

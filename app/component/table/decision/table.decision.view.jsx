@@ -36,6 +36,11 @@ export default class View extends AbstractComponent {
 		);
 	}
 
+	/**
+	 * Narrow set, five best reactions
+	 *
+	 * @method _renderNarrowSet
+	 */
 	_renderNarrowSet() {
 		let EmptyCard = ns.app.component.card.empty.View;
 
@@ -60,6 +65,11 @@ export default class View extends AbstractComponent {
 		return narrowSet;
 	}
 
+	/**
+	 * Chosen card after first round
+	 *
+	 * @method _renderPreSet
+	 */
 	_renderPreSet() {
 		let MediumCard = ns.app.component.card.medium.View;
 		let TakenCard = ns.app.component.card.taken.View;

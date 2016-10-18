@@ -32,6 +32,12 @@ export default class View extends AbstractComponent {
 		);
 	}
 
+	/**
+	 * Get first card from shuffled indexes
+	 *
+	 * @method _getFirstCard
+	 * @return {object}
+	 **/
 	_getFirstCard() {
 		if (!!this.props.shuffled) {
 			return { card: this.props.shuffled[0] };

@@ -20,9 +20,10 @@ class Controller extends BaseController {
 	 * @method constructor
 	 * @constructor
 	 * @param {app.model.reaction.Service} reactionService
-	 * @param {ima.storage.SessionStorage} sessionStorage
+	 * @param {ima.storage.CookieStorage} cookieStorage
+	 * @param {ima.router.Router} router
 	 */
-	constructor(reactionService, sessionStorage) {
+	constructor(reactionService, cookieStorage, router) {
 		super();
 
 		/**
@@ -44,13 +45,22 @@ class Controller extends BaseController {
 		this._reactionService = reactionService;
 
 		/**
+		 * Router
+		 *
+		 * @property router
+		 * @private
+		 * @type {ima.router.Router}
+		 */
+		this._router = router;
+
+		/**
 		 * Session Storage
 		 *
 		 * @property storage
 		 * @private
-		 * @type {ima.storage.SessionStorage} sessionStorage
+		 * @type {ima.storage.CookieStorage} cookieStorage
 		 */
-		this._storage = sessionStorage;
+		this._storage = cookieStorage;
 
 		/**
 		 * Storage Key – shuffle
@@ -158,6 +168,24 @@ class Controller extends BaseController {
 		}
 
 	    return arr;
+	}
+
+	/**
+	 * @method onPickCard
+	 */
+	onPickCard(params) {
+		// state
+		let state = this.getState();
+		if (!state.decided) {
+			state.decided = [params.pickedIndex]
+		} else if (state.decided instanceof Array) {
+			state.decided.push(params.pickedIndex);
+		}
+
+		// save to storage
+	    this._storage.set(this._decisionKey, state.decided.join(this._storageSeparator));
+	    this.setState(state);
+		this._router.redirect(params.url, { onlyUpdate: true });
 	}
 }
 

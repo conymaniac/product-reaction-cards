@@ -18,6 +18,7 @@ export default class View extends AbstractComponent {
 						title="Pick Card"
 						routeName="deal"
 						routeParams={ this.props.routeParams }
+						onClick={ this.props.onClick }
 						$Utils={ this.utils } />
 					<Link 
 						classPrefix="card__"

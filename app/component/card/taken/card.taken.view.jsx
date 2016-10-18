@@ -14,8 +14,8 @@ export default class View extends AbstractComponent {
 				<p className="card__actions">
 					<Link 
 						classPrefix="card__"
-						title="Return Card"
-						seoTitle="Return card back to the stock"
+						title="Discard Card"
+						seoTitle="Discard card"
 						$Utils={ this.utils } />
 					</p>
 			</div>

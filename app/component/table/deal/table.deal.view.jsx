@@ -23,6 +23,11 @@ export default class View extends AbstractComponent {
 		);
 	}
 
+	/**
+	 * Render stock
+	 *
+	 * @method _renderStock
+	 */
 	_renderStock() {
 		if (!!this.props.reactions && !!this.props.shuffled) {
 
@@ -47,6 +52,7 @@ export default class View extends AbstractComponent {
 						<DefaultCard 
 							title={ currentReaction.getTitle() }
 							routeParams={ { card: nextShuffledIndex } }
+							onClick={ (e) => this._pickCard(e, currentReactionIndex, nextShuffledIndex) }
 							$Utils={ this.utils } />
 					)
 				}
@@ -54,11 +60,35 @@ export default class View extends AbstractComponent {
 		}
 	}
 
-	_renderDecision() {
-		if (!!this.props.reactions && !!this.props.decision) {
 
-			// components
-			let TakenCard = ns.app.component.card.taken.View;
+	/**
+	 * Render decided
+	 *
+	 * @method _renderDecision
+	 */
+	_renderDecision() {
+		if (!!this.props.reactions && !!this.props.decided) {
+
+			// index in shuffled list
+			let lastDecisionIndex = this.props.decided[this.props.decided.length - 1];
+
+			// check current reaciton entity
+			if (this.props.reactions.length > lastDecisionIndex) {
+
+				// current reaciton entity
+				let lastDecision = this.props.reactions[lastDecisionIndex];
+				if (!!lastDecision && !!lastDecision.getId()) {
+
+					// components
+					let TakenCard = ns.app.component.card.taken.View;
+					return (
+						<TakenCard 
+							title={ lastDecision.getTitle() }
+							onClick={ (e) => this._returnCard(e, lastDecisionIndex) }
+							$Utils={ this.utils } />
+					)
+				}
+			}
 
 		} else {
 
@@ -71,6 +101,36 @@ export default class View extends AbstractComponent {
 			);
 
 		}
+	}
+
+	/**
+	 * Pick a card
+	 *
+	 * @method _pickCard
+	 */
+	_pickCard(e, reactionIndex, nextIndex) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		this.utils.$EventBus.fire(e.target, 'pickCard', {
+			pickedIndex: reactionIndex,
+			nextIndex: nextIndex,
+			url: !!e.currentTarget && !!e.currentTarget.getAttribute("href") ? e.currentTarget.getAttribute("href") : null
+		});
+	}
+
+	/**
+	 * Return a card
+	 *
+	 * @method _pickCard
+	 */
+	_returnCard(e, returnIndex) {
+		e.preventDefault();
+		e.stopPropagation();
+
+		this.utils.$EventBus.fire(e.target, 'returnCard', {
+			returnIndex: returnIndex
+		});
 	}
 }
 

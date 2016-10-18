@@ -17,6 +17,11 @@ export default class View extends AbstractComponent {
 		);
 	}
 
+	/**
+	 * Render choice
+	 *
+	 * @method _renderDecision
+	 */
 	_renderChoice() {
 		let SmallCard = ns.app.component.card.small.View;
 

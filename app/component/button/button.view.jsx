@@ -6,33 +6,28 @@ ns.namespace('app.component.button');
 
 export default class View extends AbstractComponent {
 	render() {
-		return (
-			<button 
-				type="button" 
-				className={ this.props.classPrefix + 'button' } 
-				onClick={ this.props.onClick }
-				disabled={ !!this.props.disabled }>
-				{ this._renderContent() }
-			</button>
-		);
-	}
-
-	_renderContent() {
 		if (!!this.props.routeName) {
 			let Link = ns.app.component.link.View;
-
+			let linkToDeal = this.utils.$Router.link(this.props.routeName, this.props.routeParams);
 			return (
-				<Link 
-					classPrefix={ this.props.classPrefix + 'button__'}
-					title={ this.props.title }
-					seoTitle={ !!this.props.seoTitle ? this.props.seoTitle : this.props.title }
-					routeName={ this.props.routeName }
-					routeParams={ this.props.routeParams }
-					$Utils={ this.utils } />
+				<a 
+					href={ linkToDeal } 
+					className={ this.props.classPrefix + 'button' } 
+					title={ !!this.props.seoTitle ? this.props.seoTitle : this.props.title }
+					onClick={ this.props.onClick }
+					disabled={ !!this.props.disabled }>
+					<span className={ this.props.classPrefix + 'button__title' }>{ this.props.title }</span>
+				</a>
 			);
 		} else {
 			return (
-				<span className={ this.props.classPrefix + 'button__title' }>{ this.props.title }</span>
+				<button
+					type="button" 
+					className={ this.props.classPrefix + 'button' } 
+					onClick={ this.props.onClick }
+					disabled={ !!this.props.disabled }>
+					<span className={ this.props.classPrefix + 'button__title' }>{ this.props.title }</span>
+				</button>
 			);
 		}
 	}
