@@ -14,9 +14,11 @@ export default class View extends AbstractComponent {
 					{ this._renderNarrowSet() }
 				</section>
 				<section className="table__row">
-					<div className="table__stock--help">
-						<div className="table__box table__box--help">
-							<p className="table__instructions">Please narrow your set down to the 5 best that <br className="table__break" />best describe the product or how using the product made you feel.</p>
+					<div className="table__stock--instructions">
+						<p className="table__instructions">Please narrow the set down to the 5 best that best describe the product <br className="table__break" />or how using the product made you feel.</p>
+					</div>
+					<div className="table__stock--actions">
+						<p className="table__actions">
 							<Button 
 								classPrefix="table__"
 								title="All Done!"
@@ -24,7 +26,7 @@ export default class View extends AbstractComponent {
 								routeName="thanku"
 								disabled={ true && false }
 								$Utils={ this.utils } />
-						</div>
+						</p>
 					</div>
 				</section>
 				<section className="table__row">

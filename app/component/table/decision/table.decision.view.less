@@ -23,20 +23,76 @@
 			
 			margin-bottom: unit(48 / 16, rem);
 
-			&--help {
+			&--instructions,
+			&--actions {
 				&:extend(.col-xs-12);
+
+				margin-bottom: 3rem;
+
+				@media screen and (min-width: @--xm-min) {
+					margin-bottom: 3rem;
+				}
+			}
+
+			&--instructions {
+				margin-bottom: 2rem;
+
+				@media screen and (min-width: @--xm-min) {
+					-ms-flex-preferred-size: 60%;
+				    flex-basis: 40%;
+				    max-width: 40%;
+				}
+			}
+
+			&--actions {
+				@media screen and (min-width: @--xm-min) {
+					-ms-flex-preferred-size: 20%;
+				    flex-basis: 20%;
+				    max-width: 20%;
+				}
 			}
 		}
 
-		&__box {
-			&--help {
-				margin: 0 auto unit(48 / 16, rem);
+		&__instructions,
+		&__actions {
+			text-align: center;
+
+			@media screen and (min-width: @--xm-min) {
+				text-align: left;
+			}
+		}
+
+		&__instructions {
+			padding: 0 unit(8 / 16, rem);
+
+			@media screen and (min-width: @--xm-min) {
+				padding: 0;
+				padding-left: unit(32 / 16, rem);
+			}
+		}
+
+		&__actions {
+			@media screen and (min-width: @--xm-min) {
+				padding: 0;
+				margin: 0 auto;
 				text-align: center;
 			}
 		}
 
 		&__button {
-			margin: unit(24 / 16, rem) auto 0;
+			margin: 0 auto;
+		}
+
+		&__break {
+			display: none;
+
+			@media screen and (min-width: @--sm-min) {
+				display: initial;
+			}
+
+			@media screen and (min-width: @--xm-min) {
+				display: none;
+			}
 		}
 	}
 }

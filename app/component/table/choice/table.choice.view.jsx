@@ -27,12 +27,9 @@ export default class View extends AbstractComponent {
 		for (let i = 0; i < choiceLength; i++) {
 			choice.push(
 				<div className="table__stock" key={ "choice-" + i }>
-					<div className="table__box">
-						<SmallCard 
-							title={ tmpName[i] }
-							$Utils={ this.utils } />
-						
-					</div>
+					<SmallCard 
+						title={ tmpName[i] }
+						$Utils={ this.utils } />
 				</div>
 			);
 		}
