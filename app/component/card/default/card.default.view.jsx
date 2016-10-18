@@ -10,17 +10,21 @@ export default class View extends AbstractComponent {
 		let Link = ns.app.component.link.View;
 
 		return (
-			<div className="card">
+			<div className="card card--default">
 				<p className="card__title">{ this.props.title }</p>
 				<p className="card__actions">
 					<Button 
 						classPrefix="card__"
 						title="Pick Card"
+						routeName="deal"
+						routeParams={ this.props.routeParams }
 						$Utils={ this.utils } />
 					<Link 
 						classPrefix="card__"
 						title="Next Card"
 						seoTitle="Show me the next card"
+						routeName="deal"
+						routeParams={ this.props.routeParams }
 						$Utils={ this.utils } />
 				</p>
 			</div>

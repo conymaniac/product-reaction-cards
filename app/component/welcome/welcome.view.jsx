@@ -26,9 +26,16 @@ export default class View extends AbstractComponent {
 					classPrefix="welcome__"
 					title="Deal Cards"
 					routeName="deal"
+					routeParams={ this._getFirstCard() }
 					$Utils={ this.utils } />
 			</section>
 		);
+	}
+
+	_getFirstCard() {
+		if (!!this.props.shuffled) {
+			return { card: this.props.shuffled[0] };
+		}
 	}
 }
 

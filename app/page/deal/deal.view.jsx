@@ -16,6 +16,9 @@ export default class View extends AbstractComponent {
 				<Header />
 				<Content>
 					<Table
+						reactions={ this.props.reactions }
+						shuffled={ this.props.shuffled }
+						decided={ this.props.decided }
 						$Utils={ this.utils } />
 				</Content>
 				<Footer />

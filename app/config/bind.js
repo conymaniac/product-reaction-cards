@@ -11,10 +11,10 @@ export let init = (ns, oc, config) => {
 	oc.bind('ReactionService', ns.app.model.reaction.Service, ['ReactionResource']);
 
 	// Pages
-	oc.inject(ns.app.page.welcome.Controller);
-	oc.inject(ns.app.page.deal.Controller, ['ReactionService']);
-	oc.inject(ns.app.page.decision.Controller, ['ReactionService']);
-	oc.inject(ns.app.page.thanku.Controller, ['ReactionService']);
+	oc.inject(ns.app.page.welcome.Controller, ['ReactionService', '$CookieStorage']);
+	oc.inject(ns.app.page.deal.Controller, ['ReactionService', '$CookieStorage']);
+	oc.inject(ns.app.page.decision.Controller, ['ReactionService', '$CookieStorage']);
+	oc.inject(ns.app.page.thanku.Controller, ['ReactionService', '$CookieStorage']);
 
 	oc.inject(ns.app.page.error.Controller, []);
 	oc.inject(ns.app.page.notFound.Controller, []);
@@ -25,6 +25,7 @@ export let init = (ns, oc, config) => {
 		get $EventBus() { return oc.get('$EventBus'); },
 		get $Dictionary() { return oc.get('$Dictionary'); },
 		get $Settings() { return oc.get('$Settings'); },
-		get $Window() { return oc.get('$Window'); }
+		get $Window() { return oc.get('$Window'); },
+		get $CookieStorage() { return oc.get('$CookieStorage'); }
 	});
 };

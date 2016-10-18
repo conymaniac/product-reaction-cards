@@ -11,14 +11,18 @@ export default class View extends AbstractComponent {
 		return (
 			<header className="header">
 				<nav className="header__nav">
-					{ this._renderBackLink() }
-					<Link 
-						classPrefix="home__"
-						title="Product Reaction Cards"
-						seoTitle="Product Reaction Cards | an online tool for user research"
-						routeName="home"
-						isIcon={ false }
-						$Utils={ this.utils } />
+					<div className="header__item header__item--back">
+						{ this._renderBackLink() }
+					</div>
+					<div className="header__item header__item--home">
+						<Link 
+							classPrefix="home__"
+							title="Product Reaction Cards"
+							seoTitle="Product Reaction Cards | an online tool for user research"
+							routeName="home"
+							isIcon={ false }
+							$Utils={ this.utils } />
+					</div>
 				</nav>
 			</header>
 		);

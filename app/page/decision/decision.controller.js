@@ -25,6 +25,15 @@ class Controller extends BaseController {
 		super();
 
 		/**
+		 * ID
+		 *
+		 * @property id
+		 * @private
+		 * @type {string}
+		 */
+		this._id = 'decision';
+
+		/**
 		 * Service providing the list of feed items loaded from the REST API.
 		 *
 		 * @property reactionService
@@ -32,21 +41,6 @@ class Controller extends BaseController {
 		 * @type {app.model.reaction.Service}
 		 */
 		this._reactionService = reactionService;
-	}
-
-	/**
-	 * Set meta params.
-	 *
-	 * @method setSeoParams
-	 * @param {Object} resolvedPromises
-	 * @param {ima.meta.MetaManager} metaManager
-	 * @param {ima.router.Router} router
-	 * @param {ima.dictionary.Dictionary} dictionary
-	 * @param {Object} setting
-	 */
-	setMetaParams(resolvedPromises, metaManager, router, dictionary, setting) {
-		var title = dictionary.get('decision.seoTitle');
-		var description = dictionary.get('decision.seoDescription');
 	}
 
 	/**

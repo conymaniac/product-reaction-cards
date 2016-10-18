@@ -16,6 +16,7 @@ export default class View extends AbstractComponent {
 				<Header />
 				<Content>
 					<Welcome
+						shuffled={ this.props.shuffled }
 						$Utils={ this.utils } />
 				</Content>
 				<Footer />

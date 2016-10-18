@@ -22,6 +22,16 @@ class Entity extends BaseEntity {
 		super(data);
 
 		/**
+		 * Unique entity id.
+		 *
+		 * @property _id
+		 * @private
+		 * @type {Mixed}
+		 * @default id
+		 * */
+		this._id = data.id;
+
+		/**
 		 * Entity title – title of reaction
 		 *
 		 * @property items

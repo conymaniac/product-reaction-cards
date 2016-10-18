@@ -27,6 +27,7 @@ export default class View extends AbstractComponent {
 					title={ this.props.title }
 					seoTitle={ !!this.props.seoTitle ? this.props.seoTitle : this.props.title }
 					routeName={ this.props.routeName }
+					routeParams={ this.props.routeParams }
 					$Utils={ this.utils } />
 			);
 		} else {

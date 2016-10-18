@@ -7,7 +7,7 @@ ns.namespace('app.component.link');
 export default class View extends AbstractComponent {
 	render() {
 		if (!!this.props.routeName) {
-			let linkToDeal = this.utils.$Router.link(this.props.routeName);
+			let linkToDeal = this.utils.$Router.link(this.props.routeName, this.props.routeParams);
 			return (
 				<a 
 					href={ linkToDeal } 
