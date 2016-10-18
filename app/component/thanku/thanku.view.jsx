@@ -19,18 +19,14 @@ export default class View extends AbstractComponent {
 				<TableChoice
 					$Utils={ this.utils } />
 				<section className="thanku__row">
-					<p className="thanku__subtitle">You can start again or send us your results.</p>
+					<p className="thanku__subtitle">You can start again or tell us about your results.</p>
 					<p className="thanku__actions">
 						<Button 
 							classPrefix="thanku__"
 							title="Start Again"
 							routeName="home"
 							$Utils={ this.utils } />
-						<Button 
-							classPrefix="thanku__"
-							title="Send Results"
-							onClick={ (e) => this._sendResults(e) }
-							$Utils={ this.utils } />
+						
 					</p>
 				</section>
 			</div>
@@ -38,6 +34,12 @@ export default class View extends AbstractComponent {
 	}
 
 	_sendResults(e) {
+		// <Button 
+		// 	classPrefix="thanku__"
+		// 	title="Send Results"
+		// 	onClick={ (e) => this._sendResults(e) }
+		// 	$Utils={ this.utils } />
+
 		// todo
 	}
 }
